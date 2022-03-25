@@ -29,13 +29,19 @@ public class Tour {
     private String description;
 
     @Column(name = "start_date")
-    private Date startDate;
+    private String startDate;
 
     @Column(name = "due_time")
     private String dueTime;
 
+    @Column(name = "address")
+    private String address;
+
     @Column(name = "price")
     private int price;
+
+    @Column(name = "view")
+    private int view;
 
     @OneToMany(mappedBy = "tour")
     private List<Booking> bookings;

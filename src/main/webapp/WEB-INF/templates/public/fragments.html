@@ -58,11 +58,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="tour.html" class="nav-link">Tour</a></li>
-                <li class="nav-item"><a href="hotel.html" class="nav-link">Hotels</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
                 <li th:if="${session.user}" class="nav-item"><a th:text="${session.user.fullName}" href="contact.html" class="nav-link"></a></li>
                 <li th:if="${session.user}" class="nav-item cta"><a href="/logout" class="nav-link"><span>Logout</span></a></li>
                 <li th:unless="${session.user}" class="nav-item cta"><a href="/login" class="nav-link"><span>Login</span></a></li>
