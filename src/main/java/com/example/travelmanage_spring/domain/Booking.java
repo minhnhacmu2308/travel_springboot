@@ -26,8 +26,11 @@ public class Booking {
     @JoinColumn(name = "tour_id",referencedColumnName = "id")
     private Tour tour;
 
-    @OneToMany(mappedBy = "booking")
-    private List<BookingPeople> bookings;
+    @Column(name = "quantity_adults")
+    private int quantityAdults;
+
+    @Column(name = "quantity_chirld")
+    private int quantityChirld;
 
     @Column(name = "createdAt")
     private String createdAt;
