@@ -28,4 +28,10 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findAll();
     }
 
+    @Override
+    public Comment save(Comment comment) {
+        return commentRepository.save(comment);
+    }
+
+
 }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/fragments :: html_head">
+    <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
+
+</head>
+<body>
+
+<nav th:replace="public/fragments :: html_nav" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+
+</nav>
+<div th:if="${booking_success}" class="toast" data-delay="1000" style="position:fixed; top: 100PX; left: 40PX;z-index: 2000;width: 300px">
+
+    <script>
+        swal({
+            title: 'Comment Successfully!',
+            /* text: 'Redirecting...', */
+            icon: 'success',
+            timer: 3000,
+            buttons: true,
+            type: 'success'
+        })
+    </script>
+</div>
+
+<div th:if="${booking_error}" class="toast" data-delay="1000" style="position:fixed; top: 100PX; left: 10PX;z-index: 2000;width: 300px">
+    <script>
+        swal({
+            title: 'You must be login',
+            /* text: 'Redirecting...', */
+            icon: 'error',
+            timer: 3000,
+            buttons: true,
+            type: 'success'
+        })
+    </script>
+</div>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('http://micdongsaigon.com.vn/wp-content/uploads/2020/03/Du-lich-toan-cau.jpg');height:700px">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-9 text-center" style="margin-top: 200px" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Post</a></span> <span>Detail</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" th:text="${post.title}"></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <h2 class="mb-3 mt-5" th:text="${post.title}"></h2>
+                <p>
+                    <img th:src="${'/resources/uploads/'}+${post.image}" alt="" class="img-fluid">
+                </p>
+                <p th:utext="${post.description}">Quisquam esse aliquam fuga distinctio, quidem delectus veritatis reiciendis. Nihil explicabo quod, est eos ipsum. Unde aut non tenetur tempore, nisi culpa voluptate maiores officiis quis vel ab consectetur suscipit veritatis nulla quos quia aspernatur perferendis, libero sint. Error, velit, porro. Deserunt minus, quibusdam iste enim veniam, modi rem maiores.</p>
+
+                <div class="pt-5 mt-5">
+                    <h3 class="mb-5" th:text="${listComment.size()}+ ' comments'"></h3>
+                    <ul class="comment-list">
+                        <th:block th:each="comment : ${listComment}">
+                            <li class="comment">
+
+                                <div class="comment-body">
+                                    <h3 th:text="${comment.user.fullName}"></h3>
+                                    <div class="meta" th:text="${comment.createdAt}">June 27, 2018 at 2:21pm</div>
+                                    <p th:text="${comment.text}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                    <p th:text="${comment.numberRate}+' start'"></p>
+                                </div>
+                            </li>
+                        </th:block>
+
+                    </ul>
+                    <!-- END comment-list -->
+                    <div class="col-md-12 hotel-single  mb-5 mt-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form method="post" action="/comment/add" class="star-rating">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="rate" value="5"  id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i> 5 star</span></p>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="rate"  value="4"  id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i> 4 star</span></p>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="rate" value="3"  id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i> 3 star</span></p>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="rate" value="2"  id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i> 2 star</span></p>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="rate" value="1"  id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <p class="rate"><span><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i>1 star</span></p>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea name="text" id="message" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input name="postId" type="hidden" th:value="${post.id}" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- .col-md-8 -->
+
+        </div>
+    </div>
+</section> <!-- .section -->
+
+
+<footer th:replace="public/fragments :: footer" class="ftco-footer ftco-bg-dark ftco-section">
+
+</footer>
+
+
+</body>
+</html>

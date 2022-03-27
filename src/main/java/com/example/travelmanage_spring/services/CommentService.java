@@ -12,4 +12,5 @@ import java.util.List;
 public interface CommentService {
     List<Comment> findCommentByPost(Post post);
     List<Comment> findAll();
+    Comment save(Comment comment);
 }

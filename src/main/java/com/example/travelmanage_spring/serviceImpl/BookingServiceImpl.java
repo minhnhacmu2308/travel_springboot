@@ -15,6 +15,11 @@ public class BookingServiceImpl implements BookingService {
     BookingRepository bookingRepository;
 
     @Override
+    public Booking save(Booking booking) {
+        return bookingRepository.save(booking);
+    }
+
+    @Override
     public List<Booking> findBookingByTour(Tour tour) {
         return bookingRepository.findBookingByTour(tour);
     }
@@ -22,6 +27,11 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public List<Booking> findAll() {
         return bookingRepository.findAll();
+    }
+
+    @Override
+    public List<Booking> findBookingByUserId(int id) {
+        return bookingRepository.findBookingByUserId(id);
     }
 
 }

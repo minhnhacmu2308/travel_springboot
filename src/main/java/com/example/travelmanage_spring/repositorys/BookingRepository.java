@@ -17,4 +17,7 @@ public interface BookingRepository extends PagingAndSortingRepository<Booking, I
 
     List<Booking> findAll();
 
+    @Query(value = "SELECT * from  booking  WHERE user_id = ?1",nativeQuery = true)
+    List<Booking> findBookingByUserId(int id);
+
 }

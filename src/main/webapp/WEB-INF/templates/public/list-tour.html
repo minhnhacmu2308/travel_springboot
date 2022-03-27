@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/fragments :: html_head">
+  <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
+
+</head>
+<body>
+
+<nav th:replace="public/fragments :: html_nav" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+
+</nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('https://vietnamtravelmart.com.vn/wp-content/uploads/BAI-SAO.jpg');height:700px">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-9 text-center" style="margin-top: 200px" data-scrollax=" properties: { translateY: '70%' }">
+        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>List</span></p>
+        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"  >Tours</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <th:block th:each="tour : ${listTour}">
+            <div class="col-md-3">
+              <div class="destination">
+                <a th:href="'/tour/detail/'+${tour.id}"> <img width="250px"  class="img img-2 d-flex justify-content-center align-items-center" th:src="${'/resources/uploads/'}+${tour.image}"></a>
+                <div class="text p-3">
+                  <div class="d-flex">
+                    <div class="one">
+                      <h3><a th:href="'/tour/detail/'+${tour.id}" th:text="${tour.title}"></a></h3>
+                      <p class="rate">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star-o"></i>
+                        <span th:text="${tour.view}+ ' view'"></span>
+                      </p>
+                    </div>
+                    <div class="two">
+                      <span class="price" th:text="${tour.price}+' VND'"></span>
+                    </div>
+                  </div>
+                  <p th:text="${tour.description}"></p>
+                  <p class="days"><span th:text="'from '+${tour.startDate}+' to '"></span><span th:text="${tour.dueTime} "></span></p>
+                  <hr>
+                  <p class="bottom-area d-flex">
+                    <span><i class="icon-map-o"></i><span th:text="${tour.address}"></span> </span>
+                    <span class="ml-auto"><a th:href="'/tour/detail/'+${tour.id}">Book now</a></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </th:block>
+        </div>
+      </div> <!-- .col-md-8 -->
+    </div>
+  </div>
+</section> <!-- .section -->
+
+<footer th:replace="public/fragments :: footer" class="ftco-footer ftco-bg-dark ftco-section">
+
+</footer>
+
+
+</body>
+</html>

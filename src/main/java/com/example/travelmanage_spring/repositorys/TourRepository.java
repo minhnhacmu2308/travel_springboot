@@ -1,6 +1,7 @@
 package com.example.travelmanage_spring.repositorys;
 
 import com.example.travelmanage_spring.domain.Tour;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,4 +26,12 @@ public interface TourRepository extends JpaRepository<Tour, Integer> {
     @Transactional
     @Query(value = "Delete From tour WHERE id = ?",nativeQuery = true)
     int delete( int id);
+
+    @Query(value = "SELECT * from  tour  WHERE name LIKE %?1% or price LIKE %?1%",nativeQuery = true)
+    List<Tour> search(String keyWord);
+
+    @Query(value = "SELECT * from  tour  WHERE start_date LIKE %?1% or due_time LIKE %?1%",nativeQuery = true)
+    List<Tour> searchDate(String keyWord);
+
+    List<Tour> findAll(Sort sort);
 }

@@ -8,6 +8,8 @@ import java.util.List;
 
 @Service
 public interface  BookingService {
+    Booking save(Booking booking);
     List<Booking> findBookingByTour(Tour tour);
     List<Booking> findAll();
+    List<Booking> findBookingByUserId(int id);
 }

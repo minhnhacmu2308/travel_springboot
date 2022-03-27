@@ -19,10 +19,10 @@
                 <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore <br></strong> your amazing city</h1>
                 <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
                 <div class="block-17 my-4">
-                    <form action="" method="post" class="d-block d-flex">
+                    <form action="/tour/search" method="post" class="d-block d-flex">
                         <div class="fields d-block d-flex">
                             <div class="textfield-search one-third">
-                                <input type="text" class="form-control" placeholder="Ex: food, service, hotel">
+                                <input type="text" class="form-control" name="keySearch" placeholder="Ex: name, price">
                             </div>
 
                         </div>
@@ -31,10 +31,10 @@
                 </div>
                 <p>Or start time</p>
                 <div class="block-17 my-4">
-                    <form action="" method="post" class="d-block d-flex">
+                    <form action="/tour/search-date" method="post" class="d-block d-flex">
                         <div class="fields d-block d-flex">
                             <div class="textfield-search one-third">
-                                <input type="date" class="form-control" placeholder="start date">
+                                <input type="date" class="form-control" name="keySearch" placeholder="start date or dute date">
                             </div>
 
                         </div>
@@ -121,7 +121,7 @@
                                     </p>
                                 </div>
                                 <div class="two">
-                                    <span class="price" th:text="'$ ' +${tour.price}"></span>
+                                    <span class="price" th:text="${tour.price}+' VND'"></span>
                                 </div>
                             </div>
                             <p th:text="${tour.description}"></p>
@@ -129,7 +129,7 @@
                             <hr>
                             <p class="bottom-area d-flex">
                                 <span><i class="icon-map-o"></i><span th:text="${tour.address}"></span> </span>
-                                <span class="ml-auto"><a href="#">Book now</a></span>
+                                <span class="ml-auto"><a th:href="'/tour/detail/'+${tour.id}">Book now</a></span>
                             </p>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                                     </p>
                                 </div>
                                 <div class="two">
-                                    <span class="price" th:text="'$ ' +${tour.price}"></span>
+                                    <span class="price" th:text="${tour.price}+' VND'"></span>
                                 </div>
                             </div>
                             <p th:text="${tour.description}"></p>
@@ -230,7 +230,7 @@
                             <hr>
                             <p class="bottom-area d-flex">
                                 <span><i class="icon-map-o"></i><span th:text="${tour.address}"></span> </span>
-                                <span class="ml-auto"><a href="#">Book now</a></span>
+                                <span class="ml-auto"><a th:href="'/tour/detail/'+${tour.id}">Book now</a></span>
                             </p>
                         </div>
                     </div>

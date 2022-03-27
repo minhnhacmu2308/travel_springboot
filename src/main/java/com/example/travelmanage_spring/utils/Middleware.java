@@ -10,13 +10,13 @@ import java.util.Objects;
 
 public class Middleware {
 
-    public  static boolean middleware( HttpServletRequest request){;
+    public static User middleware( HttpServletRequest request){;
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute(CommonConstants.SESSION_USER);
         if (Objects.nonNull(user)) {
-            return true;
+            return user;
         } else {
-            return false;
+            return null;
         }
     }
 

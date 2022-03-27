@@ -27,6 +27,9 @@ public class Comment {
     @JoinColumn(name = "user_id",referencedColumnName = "id")
     private User user;
 
+    @Column(name = "createdAt")
+    private String createdAt;
+
     @ManyToOne
     @JoinColumn(name = "post_id",referencedColumnName = "id")
     private Post post;
