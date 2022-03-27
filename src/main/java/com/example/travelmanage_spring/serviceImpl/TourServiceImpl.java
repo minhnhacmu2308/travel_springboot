@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -35,5 +36,15 @@ public class TourServiceImpl implements TourService {
     @Override
     public Tour save(Tour tour) {
         return tourRepository.save(tour);
+    }
+
+    @Override
+    public int update(String name, String desciption , int cost, String image, String due_time, Date start_date, int id) {
+        return tourRepository.update(name,desciption,cost,image,due_time,start_date,id);
+    }
+
+    @Override
+    public int delete(int id) {
+        return tourRepository.delete(id);
     }
 }
