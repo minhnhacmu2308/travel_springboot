@@ -26,4 +26,7 @@ public interface UserService {
     User findUserByUserName(String userName);
 
     void delete(int id);
+
+    List<User> listEmployee();
+    List<User> listCustomer();
 }

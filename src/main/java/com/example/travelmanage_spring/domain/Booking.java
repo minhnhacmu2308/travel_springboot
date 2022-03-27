@@ -32,6 +32,9 @@ public class Booking {
     @Column(name = "quantity_chirld")
     private int quantityChirld;
 
+    @Column(name = "total")
+    private int total;
+
     @Column(name = "createdAt")
     private String createdAt;
 

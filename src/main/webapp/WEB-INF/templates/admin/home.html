@@ -22,7 +22,8 @@
           <li class="breadcrumb-item active"></li>
         </ol>
         <div class="row">
-        <h1>Index</h1>
+        <h1 th:if="${session.admin.role.id == 3}">Hello Admin. Welcome !</h1>
+          <h1 th:unless="${session.admin.role.id == 3}">Hello Employee. Welcome !</h1>
         </div>
       </div>
     </main>

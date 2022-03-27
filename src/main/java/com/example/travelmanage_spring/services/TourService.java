@@ -10,4 +10,6 @@ public interface TourService {
     List<Tour> findAll(Sort sort);
     Tour findTourById(int id);
     Tour save(Tour tour);
+    int update(String name, String desciption , int cost, String image, String due_time, String start_date, String address, int id);
+    int delete(int id);
 }

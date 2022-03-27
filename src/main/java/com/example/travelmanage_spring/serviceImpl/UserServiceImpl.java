@@ -65,4 +65,14 @@ public class UserServiceImpl implements UserService {
     public void delete(int id) {
         userRepository.deleteById(id);
     }
+
+    @Override
+    public List<User> listEmployee() {
+        return userRepository.listEmployee();
+    }
+
+    @Override
+    public List<User> listCustomer() {
+        return userRepository.listCustomer();
+    }
 }

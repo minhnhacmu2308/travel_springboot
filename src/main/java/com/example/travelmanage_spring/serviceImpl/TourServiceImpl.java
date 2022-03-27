@@ -36,4 +36,14 @@ public class TourServiceImpl implements TourService {
     public Tour save(Tour tour) {
         return tourRepository.save(tour);
     }
+
+    @Override
+    public int update(String name, String desciption , int cost, String image, String due_time, String start_date, String address, int id) {
+        return tourRepository.update(name,desciption,cost,image,due_time,start_date,address,id);
+    }
+
+    @Override
+    public int delete(int id) {
+        return tourRepository.delete(id);
+    }
 }
