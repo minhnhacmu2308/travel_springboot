@@ -11,13 +11,13 @@
 </nav>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('https://vietnamtravelmart.com.vn/wp-content/uploads/BAI-SAO.jpg');height:700px">
+<div class="hero-wrap js-fullheight" style="background-image: url('https://phunugioi.com/wp-content/uploads/2020/11/hinh-anh-thanh-pho-da-nang.jpg');height:400px">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-9 text-center" style="margin-top: 200px" data-scrollax=" properties: { translateY: '70%' }">
                 <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>List</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"  >Posts</h1>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"  >News</h1>
             </div>
         </div>
     </div>
@@ -26,18 +26,17 @@
     <div class="container">
         <div class="row d-flex">
             <th:block th:each="post : ${listPost}">
-            <div class="col-md-3 d-flex ">
+            <div class="col-md-4 d-flex ">
                 <div class="blog-entry align-self-stretch">
                     <a th:href="'/post/detail/' +${post.id}">
                         <img class="block-20" th:src="${'/resources/uploads/'}+${post.image}"/>
                     </a>
                     <div class="text p-4 d-block">
-                        <span class="tag">Post</span>
                         <h3 class="heading mt-3"><a th:href="'/post/detail/' +${post.id}" th:text="${post.title}"></a></h3>
                         <div class="meta mb-3">
                             <div><a th:text="${post.createdAt}">August 12, 2018</a></div>
                             <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> </a></div>
                         </div>
                     </div>
                 </div>

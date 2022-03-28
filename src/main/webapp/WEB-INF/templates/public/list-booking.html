@@ -11,7 +11,7 @@
 </nav>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('https://vietnamtravelmart.com.vn/wp-content/uploads/BAI-SAO.jpg');height:700px">
+<div class="hero-wrap js-fullheight" style="background-image: url('https://phunugioi.com/wp-content/uploads/2020/11/hinh-anh-thanh-pho-da-nang.jpg');height:400px">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -34,6 +34,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Quantity adults</th>
                 <th scope="col">Quantity chirl</th>
+                <th scope="col">Booking Day</th>
                 <th scope="col">Total</th>
             </tr>
             </thead>
@@ -45,6 +46,7 @@
                     <td ><a th:text="${booking.tour.title}" th:href="'/tour/detail/' +${booking.tour.id}"></a></td>
                     <td th:text="${booking.quantityAdults}">Mark</td>
                     <td th:text="${booking.quantityChirld}">Otto</td>
+                    <td th:text="${booking.createdAt}"></td>
                     <td th:text="${booking.total}+ ' VND'" ></td>
                 </tr>
             </th:block>

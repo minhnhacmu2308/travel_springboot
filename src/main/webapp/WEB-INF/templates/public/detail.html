@@ -37,7 +37,7 @@
 </div>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('http://micdongsaigon.com.vn/wp-content/uploads/2020/03/Du-lich-toan-cau.jpg');height:700px">
+<div class="hero-wrap js-fullheight" style="background-image: url('https://phunugioi.com/wp-content/uploads/2020/11/hinh-anh-thanh-pho-da-nang.jpg');height:400px">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -74,7 +74,7 @@
     							<i class="icon-star-o"></i>
     							<span th:text="${tour.view}+' view'"></span>
                         </p>
-                        <p th:text="${tour.description}">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                        <p th:utext="${tour.description}">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
                     </div>
 
 
@@ -85,11 +85,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label>Quantity Adults (400,000 VND / people)</label>
                                             <input type="text" class="form-control" name="quantityAdults" required placeholder="Quantity Adults">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label>Quantity Children (200,000 VND / people)</label>
                                             <input type="text" class="form-control" name="quantityChirld" required placeholder="Quantity chirld">
                                         </div>
                                     </div>
@@ -120,12 +122,12 @@
                     </div>
 
                     <div class="col-md-12 hotel-single  mb-5 mt-5">
-                        <h4 class="mb-4">Related Hotels</h4>
+                        <h4 class="mb-4">Related Tours</h4>
                         <div class="row">
                             <th:block th:each="tour : ${topTour}">
                                 <div class="col-md-4">
                                     <div class="destination">
-                                        <a th:href="'/tour/detail/'+${tour.id}"  ><img class="img img-2" th:src="${'/resources/uploads/'}+${tour.image}"></a>
+                                        <a th:href="'/tour/detail/'+${tour.id}"  ><img width="350px" class="img img-2" th:src="${'/resources/uploads/'}+${tour.image}"></a>
                                         <div class="text p-3">
                                             <div class="d-flex">
                                                 <div class="one">
@@ -143,7 +145,7 @@
                                                     <span class="price per-price" th:text="${tour.price}+' VND'">$40<br></span>
                                                 </div>
                                             </div>
-                                            <p th:utext="${tour.description}">Far far away, behind the word mountains, far from the countries</p>
+
                                             <hr>
                                             <p class="days"><span th:text="'from '+${tour.startDate}+' to '"></span><span th:text="${tour.dueTime} "></span></p>
                                             <hr>

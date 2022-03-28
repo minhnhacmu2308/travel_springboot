@@ -11,7 +11,7 @@
 </nav>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('https://vietnamtravelmart.com.vn/wp-content/uploads/BAI-SAO.jpg');height:700px">
+<div class="hero-wrap js-fullheight" style="background-image: url('https://phunugioi.com/wp-content/uploads/2020/11/hinh-anh-thanh-pho-da-nang.jpg');height:400px">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -29,9 +29,9 @@
                 <div class="row">
                     <h5 th:if="${listTour.size() == 0}" >No result</h5>
                     <th:block th:each="tour : ${listTour}">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="destination">
-                                <a th:href="'/tour/detail/'+${tour.id}"> <img width="250px"  class="img img-2 d-flex justify-content-center align-items-center" th:src="${'/resources/uploads/'}+${tour.image}"></a>
+                                <a th:href="'/tour/detail/'+${tour.id}"> <img width="350px"  class="img img-2 d-flex justify-content-center align-items-center" th:src="${'/resources/uploads/'}+${tour.image}"></a>
                                 <div class="text p-3">
                                     <div class="d-flex">
                                         <div class="one">
@@ -49,7 +49,6 @@
                                             <span class="price" th:text="${tour.price}+' VND'"></span>
                                         </div>
                                     </div>
-                                    <p th:text="${tour.description}"></p>
                                     <p class="days"><span th:text="'from '+${tour.startDate}+' to '"></span><span th:text="${tour.dueTime} "></span></p>
                                     <hr>
                                     <p class="bottom-area d-flex">
