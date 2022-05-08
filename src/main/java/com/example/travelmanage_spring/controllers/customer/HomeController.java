@@ -35,4 +35,16 @@ public class HomeController {
         mv.addObject("activeHome","activeHome");
         return mv;
     }
+
+    @GetMapping({"/map"})
+    public ModelAndView map( ){
+        ModelAndView mv = new ModelAndView("public/map");
+        return mv;
+    }
+
+    @GetMapping({"/video"})
+    public ModelAndView video( ){
+        ModelAndView mv = new ModelAndView("public/video");
+        return mv;
+    }
 }
